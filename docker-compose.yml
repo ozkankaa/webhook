@@ -1,0 +1,36 @@
+services:
+  webhook-hub:
+    build:
+      context: .
+      dockerfile: src/Hub/WebhookHub/Dockerfile
+    container_name: webhook-hub
+    ports:
+      - "5001:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: Data Source=/data/webhook-hub.db
+      ApiKey__HeaderName: X-Api-Key
+      ApiKey__Key: dev-api-key-123
+    volumes:
+      - webhook-hub-data:/data
+    depends_on:
+      - webhook-receiver
+
+  webhook-receiver:
+    build:
+      context: .
+      dockerfile: src/Receiver/WebhookReceiver/Dockerfile
+    container_name: webhook-receiver
+    ports:
+      - "5002:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: Data Source=/data/webhook-receiver.db
+      WebhookReceiver__EventSecrets__order.created: super-secret-value
+      WebhookReceiver__EventSecrets__order.cancelled: cancel-secret-value
+    volumes:
+      - webhook-receiver-data:/data
+
+volumes:
+  webhook-hub-data:
+  webhook-receiver-data:

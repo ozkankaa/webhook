@@ -1,0 +1,134 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+artifacts/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+
+# Rider / ReSharper
+.idea/
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# VS Code
+.vscode/
+
+# JetBrains Rider caches
+*.sln.iml
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+!**/packages/build/
+
+# .NET Aspire (if added later)
+.aspire/
+
+# EF Core local database files
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Keep migrations in source control
+!**/Migrations/**
+
+# Local development secrets
+appsettings.Development.local.json
+appsettings.Local.json
+secrets.json
+
+# User secrets
+**/secrets.json
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+Logs/
+*.log
+
+# Serilog rolling files
+*.txt
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]enchmark[Dd]ot[Nn]et.Artifacts/
+
+# Coverage reports
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+coverage.opencover.xml
+
+# Docker
+docker-compose.override.yml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Node.js (if frontend is added later)
+node_modules/
+
+# Publish output
+publish/
+
+# Generated OpenAPI files
+openapi.json
+swagger.json
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.orig
+
+# Azure / deployment artifacts
+.publishsettings
+
+# IIS Express
+iisexpress/
+
+# Local SQLite databases in project folders
+src/**/webhookhub.db
+src/**/webhookreceiver.db
+
+# Local Docker volumes (if mapped to folders later)
+data/
+volumes/
+
+# Ignore generated certificates
+*.pfx
+*.pem
+*.key
+
+# Ignore sensitive appsettings overrides
+appsettings.*.local.json
+
+# But keep environment-specific templates
+!appsettings.Development.json
+!appsettings.Production.json
+!appsettings.Testing.json
